@@ -61,13 +61,10 @@ function loadTweets() {
     dataType: "xml",
     success: function(xml) {
       var image = $(xml).find("image").text();
-      console.log(image);
       $(xml).find("item").each(function(){
         var creator = $(this).find("dc\\:creator").text().replace("(", "").replace(")","");
         var descripcion = $(this).find("description").text();
         var date = $(this).find("pubDate").text();        
-        console.log(creator);
-        console.log(descripcion);
         addNew(creator, descripcion, image, date);
       });
     },
