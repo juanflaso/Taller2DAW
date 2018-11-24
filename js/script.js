@@ -1,7 +1,3 @@
-/* Cargar las noticias de noticias.json y noticias.xml */
-//title card-title
-// p card-text
-//div card-body a #noticias
 function addNew(titulo, contenido, image, date) {
   var tweet = $("<div/>", {
     "class": "row card-body"
@@ -58,7 +54,7 @@ function addNew(titulo, contenido, image, date) {
 
 
 
-function loadNewsXml() {
+function loadTweets() {
   $.ajax({
     type: "GET",
     url : "https://twitrss.me/twitter_user_to_rss/?user=elonmusk",
@@ -82,10 +78,9 @@ function loadNewsXml() {
 }
 
 
-/* Filtrar las noticias de acuerdo al contenido ingresado en el input#buscador, ya sea por el texto en el título o en el contenido */
 
 $(document).ready(function(){
-  loadNewsXml();
+  loadTweets();
 
   $("button").click(function(e){
 
